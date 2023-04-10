@@ -13,8 +13,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import me.kartikarora.android14.nav.Destination
+import me.kartikarora.android14.ui.composables.SetupM3Scaffold
 import me.kartikarora.android14.ui.theme.Android14Theme
-import me.kartikarora.android14.utils.SetupM3Scaffold
 
 @Composable
 fun ScreenshotScreen(paddingValues: PaddingValues, text: String) {

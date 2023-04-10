@@ -30,6 +30,10 @@
         <activity
             android:name=".activities.ScreenshotActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.GrammaticalInflictionActivity"
+            android:configChanges="grammaticalGender|locale|layoutDirection"
+            android:exported="false" />
     </application>
 
 </manifest>

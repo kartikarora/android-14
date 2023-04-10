@@ -6,6 +6,7 @@ plugins {
 android {
     namespace = AndroidConfig.Namespace
     compileSdkPreview = AndroidConfig.CompileSdk
+    buildToolsVersion = AndroidConfig.BuildTools
     buildFeatures {
         compose = true
     }
@@ -14,14 +15,16 @@ android {
     }
     defaultConfig {
         applicationId = AndroidConfig.Namespace
-        minSdkVersion(AndroidConfig.MinSdk)
-        targetSdkVersion(AndroidConfig.TargetSdk)
+        minSdkPreview = AndroidConfig.MinSdk
+        targetSdkPreview = AndroidConfig.TargetSdk
         versionCode = AndroidConfig.VersionCode
         versionName = AndroidConfig.VersionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
+        resourceConfigurations += listOf("en_AU", "fr_FR", "es_ES")
+
     }
     buildTypes {
         release {
@@ -33,16 +36,19 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+    androidResources {
+        generateLocaleConfig = true
     }
 }
 

@@ -9,4 +9,7 @@ object Versions {
     const val junit = "4.13.2"
     const val espresso = "3.5.1"
     const val lifecycle = "2.6.1"
+
+    const val gradlePlugin = "8.1.0-alpha11"
+    const val kotlin = "1.8.0"
 }

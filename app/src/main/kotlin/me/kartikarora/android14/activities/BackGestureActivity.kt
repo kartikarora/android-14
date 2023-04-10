@@ -8,8 +8,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import me.kartikarora.android14.nav.Destination
 import me.kartikarora.android14.screens.backgesture.BackGestureScreen
+import me.kartikarora.android14.ui.composables.SetupM3Scaffold
 import me.kartikarora.android14.ui.theme.Android14Theme
-import me.kartikarora.android14.utils.SetupM3Scaffold
+
 
 class BackGestureActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

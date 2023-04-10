@@ -15,8 +15,8 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import me.kartikarora.android14.nav.Destination
+import me.kartikarora.android14.ui.composables.SetupM3Scaffold
 import me.kartikarora.android14.ui.theme.Android14Theme
-import me.kartikarora.android14.utils.SetupM3Scaffold
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -36,11 +36,11 @@ fun HomeScreen(
             )
     ) {
         item {
-            ButtonForDemoOf(Destination.GrammaticalInfliction, onClick)
-            ButtonForDemoOf(Destination.PerAppLanguagePref, onClick)
             ButtonForDemoOf(Destination.ScreenshotDetection, onClick)
             ButtonForDemoOf(Destination.SelectedPhotoAccess, onClick)
             ButtonForDemoOf(Destination.BackGesture, onClick)
+            ButtonForDemoOf(Destination.GrammaticalInfliction, onClick)
+            ButtonForDemoOf(Destination.IntentChooser, onClick)
         }
     }
 }

@@ -6,4 +6,5 @@ object AndroidConfig {
     const val VersionName = "1.0"
     const val Namespace = "me.kartikarora.android14"
     const val KotlinCompilerExtensionVersion = "1.4.1"
+    const val BuildTools = "34.0.0 rc3"
 }

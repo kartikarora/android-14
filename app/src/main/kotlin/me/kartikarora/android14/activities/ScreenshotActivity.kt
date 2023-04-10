@@ -14,8 +14,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import me.kartikarora.android14.R
 import me.kartikarora.android14.nav.Destination
 import me.kartikarora.android14.screens.screenshot.ScreenshotScreen
+import me.kartikarora.android14.ui.composables.SetupM3Scaffold
 import me.kartikarora.android14.ui.theme.Android14Theme
-import me.kartikarora.android14.utils.SetupM3Scaffold
 import me.kartikarora.android14.viewmodels.ScreenshotActivityViewModel
 
 class ScreenshotActivity : ComponentActivity(), Activity.ScreenCaptureCallback {

@@ -23,25 +23,3 @@ fun Context.findActivity(): ComponentActivity {
     throw IllegalStateException("no activity")
 }
 
-
-@OptIn(ExperimentalMaterial3Api::class)
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter", "RememberReturnType")
-@Composable
-fun SetupM3Scaffold(destination: Destination, content: @Composable (PaddingValues) -> Unit = {}) {
-    Surface {
-        Scaffold(
-            topBar = { TopAppBar(destination.title) },
-            content = content
-        )
-    }
-}
-
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun TopAppBar(title: String) {
-    LargeTopAppBar(
-        title = { Text(text = title) },
-        scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(),
-    )
-}

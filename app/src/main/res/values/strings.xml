@@ -1,10 +1,13 @@
 <resources>
-    <string name="app_name">Android 14</string>
+    <string name="app_name" translatable="false">Android 14</string>
 
-    <plurals name="screenshot_count_string">
+    <plurals name="screenshot_count_string" translatable="false">
         <item quantity="zero">I dare you to take a screenshot</item>
         <item quantity="one">Don\'t do it again</item>
         <item quantity="two"> Seriously, DON\'T</item>
         <item quantity="other">Okay you have been reported to the FBI</item>
     </plurals>
+
+    <string name="word">Waiter/Waitress</string>
+    <string name="sentence">The restaurant is hiring a new waiter/waitress for the busy season.</string>
 </resources>

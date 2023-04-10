@@ -15,8 +15,8 @@ import androidx.navigation.compose.rememberNavController
 import me.kartikarora.android14.nav.Destination
 import me.kartikarora.android14.nav.NavigationHost
 import me.kartikarora.android14.screens.home.HomeScreen
+import me.kartikarora.android14.ui.composables.SetupM3Scaffold
 import me.kartikarora.android14.ui.theme.Android14Theme
-import me.kartikarora.android14.utils.SetupM3Scaffold
 import me.kartikarora.android14.viewmodels.HomeViewModel
 
 class HomeActivity : ComponentActivity() {
@@ -36,16 +36,18 @@ class HomeActivity : ComponentActivity() {
                         paddingValues = paddingValues
                     ) { destination ->
                         when (destination) {
-                            Destination.BackGesture -> BackGestureActivity.start(this)
-                            Destination.SelectedPhotoAccess,
-                            Destination.PerAppLanguagePref,
-                            Destination.GrammaticalInfliction -> {
+                            Destination.IntentChooser,
+                            Destination.SelectedPhotoAccess -> {
                                 viewModel.updateDestination(destination)
                                 navHostController.navigate(destination.title)
                             }
 
-                            Destination.ScreenshotDetection -> ScreenshotActivity.start(this)
+                            Destination.GrammaticalInfliction -> GrammaticalInflictionActivity.start(
+                                this
+                            )
 
+                            Destination.BackGesture -> BackGestureActivity.start(this)
+                            Destination.ScreenshotDetection -> ScreenshotActivity.start(this)
                             else -> { /* no-op */
                             }
                         }

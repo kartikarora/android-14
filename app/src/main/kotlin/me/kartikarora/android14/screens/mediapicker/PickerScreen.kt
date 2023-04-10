@@ -29,8 +29,8 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import me.kartikarora.android14.activities.HomeActivity
 import me.kartikarora.android14.nav.Destination
+import me.kartikarora.android14.ui.composables.SetupM3Scaffold
 import me.kartikarora.android14.ui.theme.Android14Theme
-import me.kartikarora.android14.utils.SetupM3Scaffold
 import me.kartikarora.android14.utils.findActivity
 
 @Composable
