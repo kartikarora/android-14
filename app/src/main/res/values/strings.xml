@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name" translatable="false">Android 14</string>
 
+    <string name="screenshot_count_string_zero" translatable="false">I dare you to take a screenshot</string>
+    <string name="screenshot_count_string_two" translatable="false">Seriously, DON\'T</string>
     <plurals name="screenshot_count_string" translatable="false">
-        <item quantity="zero">I dare you to take a screenshot</item>
+        <item quantity="zero">@string/screenshot_count_string_zero</item>
         <item quantity="one">Don\'t do it again</item>
-        <item quantity="two"> Seriously, DON\'T</item>
-        <item quantity="other">Okay you have been reported to the FBI</item>
+        <item quantity="two">@string/screenshot_count_string_two</item>
+        <item quantity="other">Okay you have been reported to the authorities</item>
     </plurals>
 
     <string name="word">Waiter/Waitress</string>

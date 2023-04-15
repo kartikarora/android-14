@@ -19,5 +19,4 @@ class ScreenshotActivityViewModel(
     fun onScreensCaptured() {
         savedStateHandle[KEY_SCREENSHOT_COUNT] = ++screenShotCount
     }
-
 }
