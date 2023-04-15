@@ -1,5 +1,7 @@
 package me.kartikarora.android14.ui.composables
 
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
@@ -11,7 +13,6 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateMapOf
@@ -59,16 +60,16 @@ fun ToggleButton(
 ) {
     val state = remember { mutableStateMapOf<String, ToggleButtonOption>() }
 
-    OutlinedCard(
-        onClick = { },
+    Box(
         modifier = modifier
             .wrapContentSize()
+            .clickable {  }
     ) {
         Row(
             modifier = Modifier.padding(horizontal = 4.dp)
         ) {
             if (options.isEmpty()) {
-                return@OutlinedCard
+                return@Box
             }
             state.clear()
             options.filter { it.selected }
@@ -103,7 +104,7 @@ fun ToggleButton(
                     option = option,
                     onClick = onItemClick,
                 )
-                return@OutlinedCard
+                return@Box
             }
             val first = options.first().apply {
                 selected = state.contains(text)
