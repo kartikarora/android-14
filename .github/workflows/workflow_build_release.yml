@@ -1,0 +1,59 @@
+name: Build & Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Android 14 SDK
+        uses: amyu/setup-android@v2
+        with:
+          sdk-version: 'UpsideDownCake'
+          build-tools-version: '34.0.0-rc3'
+
+      - name: Decode Keystore
+        run: |
+          mkdir -p ./keystore/
+          echo -n "${{ secrets.KEYSTORE }}" | base64 -d > ./keystore/a14.keystore
+          echo -ne "SIGNING_KEYSTORE_PATH=${{ secrets.SIGNING_KEYSTORE_PATH }}" >> ./secret.properties
+          echo -ne "\nSIGNING_STORE_PASSWORD=${{ secrets.SIGNING_STORE_PASSWORD }}" >> ./secret.properties
+          echo -ne "\nSIGNING_KEY_ALIAS=${{ secrets.SIGNING_KEY_ALIAS }}" >> ./secret.properties
+          echo -ne "\nSIGNING_KEY_PASSWORD=${{ secrets.SIGNING_KEY_PASSWORD }}" >> ./secret.properties
+
+      - name: Set version code
+        run: |
+          echo -ne "\nVERSION_CODE=${{ github.run_number }}" >> ./version.properties
+
+      - name: Make gradle executable
+        run: |
+          chmod +x ./gradlew
+
+      - name: Set version name
+        run: |
+          echo "VERSION_NAME=$(./gradlew -q :app:getVersionName)" >> $GITHUB_ENV
+
+      - name: Build Android 14
+        run: |
+          ./gradlew :app:assembleRelease
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./app/build/outputs/apk/release/*.apk
+          tag_name: "${{ env.VERSION_NAME }}-${{ github.run_number }}"

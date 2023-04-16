@@ -285,3 +285,6 @@ lint/tmp/
 resources
 
 .DS_Store
+/keystore
+/version.properties
+/secret.properties

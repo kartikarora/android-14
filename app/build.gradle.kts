@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -14,10 +16,12 @@ android {
         kotlinCompilerExtensionVersion = AndroidConfig.KotlinCompilerExtensionVersion
     }
     defaultConfig {
+        val versionProperties = readProperties(file("../version.properties"))
         applicationId = AndroidConfig.Namespace
         minSdkPreview = AndroidConfig.MinSdk
         targetSdkPreview = AndroidConfig.TargetSdk
-        versionCode = AndroidConfig.VersionCode
+        versionCode =
+            versionProperties.getProperty("VERSION_CODE").toInt()
         versionName = AndroidConfig.VersionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -26,6 +30,15 @@ android {
         resourceConfigurations += listOf("en_AU", "fr_FR", "es_ES")
 
     }
+    signingConfigs {
+        create("release") {
+            val secretProperties = readProperties(file("../secret.properties"))
+            storeFile = file(secretProperties.getProperty("SIGNING_KEYSTORE_PATH"))
+            storePassword = secretProperties.getProperty("SIGNING_STORE_PASSWORD")
+            keyAlias = secretProperties.getProperty("SIGNING_KEY_ALIAS")
+            keyPassword = secretProperties.getProperty("SIGNING_KEY_PASSWORD")
+        }
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -33,8 +46,10 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -55,15 +70,23 @@ android {
 dependencies {
     implementation(Libraries.coreKtx)
     implementation(Libraries.appcompat)
-    implementation(Libraries.composeActivity)
     implementation(Libraries.lifecycle)
+    implementation(Libraries.coil)
+    implementation(Libraries.navigationCompose)
+    implementation(platform(Libraries.composeBom))
+    implementation(Libraries.composeActivity)
     implementation(Libraries.composeRuntimeLiveData)
     implementation(Libraries.composeUi)
     implementation(Libraries.composeMaterial3)
     implementation(Libraries.composeUiToolingPreview)
-    implementation(Libraries.navigationCompose)
-    implementation(Libraries.coil)
     debugImplementation(Libraries.composeUiTooling)
     testImplementation(Libraries.junit)
-    implementation(platform(Libraries.composeBom))
+}
+
+fun readProperties(propertiesFile: File) = Properties().apply {
+    propertiesFile.inputStream().use { load(it) }
+}
+
+task("getVersionName") {
+    println(AndroidConfig.VersionName)
 }
