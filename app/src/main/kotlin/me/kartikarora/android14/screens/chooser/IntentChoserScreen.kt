@@ -45,9 +45,9 @@ fun IntentChooserScreen(
             with(LocalContext.current) {
                 val chooserIntent = Intent.createChooser(
                     Intent(Intent.ACTION_SEND)
-                        .setType("image/*")
-                        .putExtra(Intent.EXTRA_TEXT, "Android 14 Demo Share"),
-                    "Share via"
+                        .setType(stringResource(R.string.image_mimetype))
+                        .putExtra(Intent.EXTRA_TEXT, stringResource(R.string.intent_chooser_extra)),
+                    stringResource(R.string.intent_chooser_title)
                 ).apply {
                     val customAction = ChooserAction.Builder(
                         Icon.createWithResource(this@with, R.drawable.baseline_android),
@@ -56,7 +56,10 @@ fun IntentChooserScreen(
                             this@with,
                             1234,
                             Intent(Intent.ACTION_WEB_SEARCH).apply {
-                                putExtra(SearchManager.QUERY, "How cool is this!")
+                                putExtra(
+                                    SearchManager.QUERY,
+                                    stringResource(R.string.custom_action_intent_query)
+                                )
                             },
                             PendingIntent.FLAG_IMMUTABLE
                         )
@@ -72,7 +75,7 @@ fun IntentChooserScreen(
                 openChooser = true
             }
         ) {
-            Text(text = "Share an image")
+            Text(text = stringResource(R.string.share_an_image_button_title))
         }
     }
 }
@@ -81,7 +84,7 @@ fun IntentChooserScreen(
 @Composable
 fun BackLightPreview() {
     Android14Theme {
-        SetupM3Scaffold(Destination.BackGesture) { paddingValues ->
+        SetupM3Scaffold(Destination.CustomActionIntentChooser) { paddingValues ->
             IntentChooserScreen(paddingValues)
         }
     }
@@ -92,7 +95,7 @@ fun BackLightPreview() {
 @Composable
 fun BackDarkPreview() {
     Android14Theme(useDarkTheme = true) {
-        SetupM3Scaffold(Destination.BackGesture) { paddingValues ->
+        SetupM3Scaffold(Destination.CustomActionIntentChooser) { paddingValues ->
             IntentChooserScreen(paddingValues)
         }
     }

@@ -12,9 +12,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import me.kartikarora.android14.R
 import me.kartikarora.android14.nav.Destination
 import me.kartikarora.android14.ui.composables.SetupM3Scaffold
 import me.kartikarora.android14.ui.composables.ToggleButton
@@ -74,23 +76,23 @@ fun GrammarScreen(
             item {
                 Text(
                     style = MaterialTheme.typography.titleLarge,
-                    text = "Word"
+                    text = stringResource(R.string.grammer_api_word_title)
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     modifier = Modifier.fillMaxWidth(),
-                    style = MaterialTheme.typography.bodyMedium,
+                    style = MaterialTheme.typography.bodyLarge,
                     text = word,
                 )
                 Spacer(modifier = Modifier.height(32.dp))
                 Text(
                     style = MaterialTheme.typography.titleLarge,
-                    text = "Sentence"
+                    text = stringResource(R.string.grammar_api_sentence_title)
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     modifier = Modifier.fillMaxWidth(),
-                    style = MaterialTheme.typography.bodyMedium,
+                    style = MaterialTheme.typography.bodyLarge,
                     text = sentence
                 )
             }

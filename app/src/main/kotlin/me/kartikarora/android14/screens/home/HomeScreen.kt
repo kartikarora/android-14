@@ -2,12 +2,9 @@ package me.kartikarora.android14.screens.home
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FilledTonalButton
-import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -15,6 +12,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import me.kartikarora.android14.nav.Destination
+import me.kartikarora.android14.ui.composables.ButtonForDemoOf
 import me.kartikarora.android14.ui.composables.SetupM3Scaffold
 import me.kartikarora.android14.ui.theme.Android14Theme
 
@@ -43,19 +41,6 @@ fun HomeScreen(
             ButtonForDemoOf(Destination.CustomActionIntentChooser, onClick)
             ButtonForDemoOf(Destination.RegionalPrefs, onClick)
         }
-    }
-}
-
-@Composable
-fun ButtonForDemoOf(
-    destination: Destination,
-    onClick: (Destination) -> Unit
-) {
-    FilledTonalButton(
-        modifier = Modifier.fillMaxWidth(),
-        onClick = { onClick.invoke(destination) }
-    ) {
-        Text(text = destination.title)
     }
 }
 

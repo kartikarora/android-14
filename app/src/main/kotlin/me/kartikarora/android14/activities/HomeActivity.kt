@@ -36,6 +36,7 @@ class HomeActivity : ComponentActivity() {
                         paddingValues = paddingValues
                     ) { destination ->
                         when (destination) {
+                            Destination.Home,
                             Destination.CustomActionIntentChooser,
                             Destination.RegionalPrefs,
                             Destination.SelectedPhotoAccess -> {

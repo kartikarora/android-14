@@ -9,9 +9,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import me.kartikarora.android14.R
 import me.kartikarora.android14.nav.Destination
 import me.kartikarora.android14.ui.composables.SetupM3Scaffold
 import me.kartikarora.android14.ui.theme.Android14Theme
@@ -34,7 +36,7 @@ fun BackGestureScreen(paddingValues: PaddingValues) {
                     .fillMaxSize()
                     .wrapContentHeight(),
                 textAlign = TextAlign.Center,
-                text = "Do the back gesture, come on. Don't be shy.",
+                text = stringResource(R.string.back_gesture_title),
                 style = MaterialTheme.typography.titleLarge
             )
         }
