@@ -9,6 +9,11 @@
         <item quantity="two">@string/screenshot_count_string_two</item>
         <item quantity="other">Okay you have been reported to the authorities</item>
     </plurals>
+    <string name="regional_pref_day_suffix">%1$sday</string>
+    <string name="regional_pref_calendar_type_title">Calendar type</string>
+    <string name="regional_pref_first_day_of_week_title">First day of week</string>
+    <string name="regional_pref_hour_cycle_title">Hour cycle</string>
+    <string name="regional_pref_temperature_unit_title">Temperature Unit</string>
 
     <string name="word">Waiter/Waitress</string>
     <string name="sentence">The restaurant is hiring a new waiter/waitress for the busy season.</string>

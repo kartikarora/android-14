@@ -36,7 +36,8 @@ class HomeActivity : ComponentActivity() {
                         paddingValues = paddingValues
                     ) { destination ->
                         when (destination) {
-                            Destination.IntentChooser,
+                            Destination.CustomActionIntentChooser,
+                            Destination.RegionalPrefs,
                             Destination.SelectedPhotoAccess -> {
                                 viewModel.updateDestination(destination)
                                 navHostController.navigate(destination.title)

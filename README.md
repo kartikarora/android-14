@@ -9,6 +9,7 @@ At the time of writing (15 April 2023) this app targets Android 14 Beta 1 and de
 - [Back Gesture Preview](https://developer.android.com/guide/navigation/predictive-back-gesture)
 - [Grammatical Infliction API](https://developer.android.com/about/versions/14/features/grammatical-inflection)
 - [Intent Chooser with Custom Actions](https://developer.android.com/about/versions/14/features#sharesheet-improvements)
+- [Regional Preferences](https://developer.android.com/about/versions/14/features#regional-preferences)
 
 ## Building and Running
 

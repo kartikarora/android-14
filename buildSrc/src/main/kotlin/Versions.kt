@@ -3,7 +3,7 @@ object Versions {
     const val navigationCompose = "2.5.3"
     const val compose = "1.4.0"
     const val activity = "1.7.0"
-    const val coreKtx = "1.9.0"
+    const val coreKtx = "1.12.0-alpha03"
     const val appcompat = "1.6.1"
     const val composeBOM = "2023.01.00"
     const val junit = "4.13.2"
