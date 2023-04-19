@@ -21,12 +21,12 @@ import me.kartikarora.android14.nav.Destination
 import me.kartikarora.android14.ui.composables.SetupM3Scaffold
 import me.kartikarora.android14.ui.composables.ToggleButton
 import me.kartikarora.android14.ui.theme.Android14Theme
-import me.kartikarora.android14.viewmodels.GrammaticalInflictionViewModel
+import me.kartikarora.android14.viewmodels.GrammaticalInflectionViewModel
 
 @Composable
 fun GrammarScreen(
     paddingValues: PaddingValues,
-    viewModel: GrammaticalInflictionViewModel = viewModel(),
+    viewModel: GrammaticalInflectionViewModel = viewModel(),
     word: String = "",
     sentence: String = "",
     onLanguageChange: () -> Unit = {},
@@ -76,7 +76,7 @@ fun GrammarScreen(
             item {
                 Text(
                     style = MaterialTheme.typography.titleLarge,
-                    text = stringResource(R.string.grammer_api_word_title)
+                    text = stringResource(R.string.grammar_api_word_title)
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
@@ -105,7 +105,7 @@ fun GrammarScreen(
 @Composable
 fun BackLightPreview() {
     Android14Theme {
-        SetupM3Scaffold(Destination.GrammaticalInfliction) { paddingValues ->
+        SetupM3Scaffold(Destination.GrammaticalInflection) { paddingValues ->
             GrammarScreen(paddingValues)
         }
     }
@@ -116,7 +116,7 @@ fun BackLightPreview() {
 @Composable
 fun BackDarkPreview() {
     Android14Theme(useDarkTheme = true) {
-        SetupM3Scaffold(Destination.GrammaticalInfliction) { paddingValues ->
+        SetupM3Scaffold(Destination.GrammaticalInflection) { paddingValues ->
             GrammarScreen(paddingValues)
         }
     }

@@ -7,7 +7,7 @@ At the time of writing (15 April 2023) this app targets Android 14 Beta 1 and de
 - [Screenshot Detection API](https://developer.android.com/about/versions/14/features/screenshot-detection)
 - [Selected Photo Access](https://developer.android.com/about/versions/14/changes/partial-photo-video-access)
 - [Back Gesture Preview](https://developer.android.com/guide/navigation/predictive-back-gesture)
-- [Grammatical Infliction API](https://developer.android.com/about/versions/14/features/grammatical-inflection)
+- [Grammatical Inflection API](https://developer.android.com/about/versions/14/features/grammatical-inflection)
 - [Intent Chooser with Custom Actions](https://developer.android.com/about/versions/14/features#sharesheet-improvements)
 - [Regional Preferences](https://developer.android.com/about/versions/14/features#regional-preferences)
 

@@ -12,7 +12,7 @@ import me.kartikarora.android14.screens.regionalprefs.RegionalPrefsScreen
 import java.io.Serializable
 
 sealed class Destination(val title: String) : Serializable {
-    object GrammaticalInfliction : Destination("Grammatical Infliction API")
+    object GrammaticalInflection : Destination("Grammatical Inflection API")
     object ScreenshotDetection : Destination("Screenshot Detection API")
     object SelectedPhotoAccess : Destination("Selected Photo Access")
     object BackGesture : Destination("Back Gesture Preview")

@@ -19,11 +19,11 @@
     <string name="sentence">The restaurant is hiring a new waiter/waitress for the busy season.</string>
     <string name="back_gesture_title">Do the back gesture, come on. Don\'t be shy.</string>
     <string name="share_an_image_button_title">Share an image</string>
-    <string name="custom_action_intent_query">How cool is this!</string>
+    <string name="custom_action_intent_query">Android 14</string>
     <string name="intent_chooser_extra">Android 14 Demo Share</string>
     <string name="intent_chooser_title">Share via</string>
     <string name="image_mimetype">image/*</string>
-    <string name="grammer_api_word_title">Word</string>
+    <string name="grammar_api_word_title">Word</string>
     <string name="grammar_api_sentence_title">Sentence</string>
     <string name="media_picker_permission_button_title">Launch permission dialog</string>
     <string name="media_picker_photo_picker_button_title">Launch photo picker</string>

@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModel
 import me.kartikarora.android14.ui.composables.ToggleButtonOption
 import java.io.Serializable
 
-class GrammaticalInflictionViewModel(
+class GrammaticalInflectionViewModel(
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -71,7 +71,7 @@ class GrammaticalInflictionViewModel(
         }
     }
 
-    sealed class Genders(val infliction: Int) : Serializable {
+    sealed class Genders(val inflection: Int) : Serializable {
         object Masculine : Genders(Configuration.GRAMMATICAL_GENDER_MASCULINE)
         object Feminine : Genders(Configuration.GRAMMATICAL_GENDER_FEMININE)
         object Neutral : Genders(Configuration.GRAMMATICAL_GENDER_NEUTRAL)

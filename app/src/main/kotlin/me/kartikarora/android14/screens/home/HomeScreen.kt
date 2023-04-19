@@ -37,7 +37,7 @@ fun HomeScreen(
             ButtonForDemoOf(Destination.ScreenshotDetection, onClick)
             ButtonForDemoOf(Destination.SelectedPhotoAccess, onClick)
             ButtonForDemoOf(Destination.BackGesture, onClick)
-            ButtonForDemoOf(Destination.GrammaticalInfliction, onClick)
+            ButtonForDemoOf(Destination.GrammaticalInflection, onClick)
             ButtonForDemoOf(Destination.CustomActionIntentChooser, onClick)
             ButtonForDemoOf(Destination.RegionalPrefs, onClick)
         }

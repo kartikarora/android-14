@@ -16,11 +16,11 @@ import me.kartikarora.android14.nav.Destination
 import me.kartikarora.android14.screens.grammar.GrammarScreen
 import me.kartikarora.android14.ui.composables.SetupM3Scaffold
 import me.kartikarora.android14.ui.theme.Android14Theme
-import me.kartikarora.android14.viewmodels.GrammaticalInflictionViewModel
+import me.kartikarora.android14.viewmodels.GrammaticalInflectionViewModel
 
-class GrammaticalInflictionActivity : AppCompatActivity() {
+class GrammaticalInflectionActivity : AppCompatActivity() {
 
-    private val viewModel: GrammaticalInflictionViewModel by viewModels()
+    private val viewModel: GrammaticalInflectionViewModel by viewModels()
 
     private val grammaticalInflectionManager by lazy {
         getSystemService(GrammaticalInflectionManager::class.java)
@@ -31,7 +31,7 @@ class GrammaticalInflictionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Android14Theme {
-                SetupM3Scaffold(Destination.GrammaticalInfliction) { paddingValues ->
+                SetupM3Scaffold(Destination.GrammaticalInflection) { paddingValues ->
                     GrammarScreen(
                         paddingValues,
                         viewModel,
@@ -40,12 +40,12 @@ class GrammaticalInflictionActivity : AppCompatActivity() {
                         onLanguageChange = {
                             AppCompatDelegate.setApplicationLocales(viewModel.currentLanguage.toLocaleList())
                             grammaticalInflectionManager.setRequestedApplicationGrammaticalGender(
-                                viewModel.currentGender.infliction
+                                viewModel.currentGender.inflection
                             )
                         },
                         onGenderChange = {
                             grammaticalInflectionManager.setRequestedApplicationGrammaticalGender(
-                                viewModel.currentGender.infliction
+                                viewModel.currentGender.inflection
                             )
                         }
                     )
@@ -56,7 +56,7 @@ class GrammaticalInflictionActivity : AppCompatActivity() {
 
     companion object {
         fun start(activity: ComponentActivity) {
-            val intent = Intent(activity, GrammaticalInflictionActivity::class.java)
+            val intent = Intent(activity, GrammaticalInflectionActivity::class.java)
             activity.startActivity(intent)
         }
     }
@@ -66,7 +66,7 @@ class GrammaticalInflictionActivity : AppCompatActivity() {
 @Composable
 fun GrammarLightPreview() {
     Android14Theme {
-        SetupM3Scaffold(Destination.GrammaticalInfliction) { paddingValues ->
+        SetupM3Scaffold(Destination.GrammaticalInflection) { paddingValues ->
             GrammarScreen(paddingValues)
         }
     }
@@ -77,7 +77,7 @@ fun GrammarLightPreview() {
 @Composable
 fun GrammarDarkPreview() {
     Android14Theme(useDarkTheme = true) {
-        SetupM3Scaffold(Destination.GrammaticalInfliction) { paddingValues ->
+        SetupM3Scaffold(Destination.GrammaticalInflection) { paddingValues ->
             GrammarScreen(paddingValues)
         }
     }

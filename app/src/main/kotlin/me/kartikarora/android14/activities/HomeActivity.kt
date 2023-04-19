@@ -44,7 +44,7 @@ class HomeActivity : ComponentActivity() {
                                 navHostController.navigate(destination.title)
                             }
 
-                            Destination.GrammaticalInfliction -> GrammaticalInflictionActivity.start(
+                            Destination.GrammaticalInflection -> GrammaticalInflectionActivity.start(
                                 this
                             )
 
