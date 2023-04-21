@@ -10,6 +10,6 @@ object Versions {
     const val espresso = "3.5.1"
     const val lifecycle = "2.6.1"
 
-    const val gradlePlugin = "8.1.0-alpha11"
+    const val gradlePlugin = "8.1.0-beta01"
     const val kotlin = "1.8.0"
 }

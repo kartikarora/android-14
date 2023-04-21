@@ -50,8 +50,6 @@ class HomeActivity : ComponentActivity() {
 
                             Destination.BackGesture -> BackGestureActivity.start(this)
                             Destination.ScreenshotDetection -> ScreenshotActivity.start(this)
-                            else -> { /* no-op */
-                            }
                         }
                     }
                 }
