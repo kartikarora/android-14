@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = AndroidConfig.Namespace
-    compileSdkPreview = AndroidConfig.CompileSdk
+    compileSdk = AndroidConfig.CompileSdk
     buildToolsVersion = AndroidConfig.BuildTools
     buildFeatures {
         compose = true
@@ -27,7 +27,6 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-        resourceConfigurations += listOf("en_AU", "fr_FR", "es_ES")
 
     }
     signingConfigs {

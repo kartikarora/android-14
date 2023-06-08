@@ -1,10 +1,10 @@
 object AndroidConfig {
 
-    const val CompileSdk = "UpsideDownCake"
-    const val MinSdk = "UpsideDownCake"
-    const val TargetSdk = "UpsideDownCake"
-    const val VersionName = "0.2.1"
+    const val CompileSdk = 34
+    const val MinSdk = "34"
+    const val TargetSdk = "34"
+    const val VersionName = "0.2.2"
     const val Namespace = "me.kartikarora.android14"
-    const val KotlinCompilerExtensionVersion = "1.4.1"
-    const val BuildTools = "34.0.0 rc4"
+    const val KotlinCompilerExtensionVersion = "1.4.7"
+    const val BuildTools = "34.0.0"
 }

@@ -50,7 +50,7 @@ fun IntentChooserScreen(
                     stringResource(R.string.intent_chooser_title)
                 ).apply {
                     val customAction = ChooserAction.Builder(
-                        Icon.createWithResource(this@with, R.drawable.baseline_android),
+                        Icon.createWithResource(this@with, R.drawable.baseline_auto_awesome),
                         stringResource(id = R.string.app_name),
                         PendingIntent.getActivity(
                             this@with,

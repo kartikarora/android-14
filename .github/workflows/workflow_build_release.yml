@@ -24,8 +24,8 @@ jobs:
       - name: Setup Android 14 SDK
         uses: amyu/setup-android@v2
         with:
-          sdk-version: 'UpsideDownCake'
-          build-tools-version: '34.0.0-rc4'
+          sdk-version: '34'
+          build-tools-version: '34.0.0'
 
       - name: Decode Keystore
         run: |
