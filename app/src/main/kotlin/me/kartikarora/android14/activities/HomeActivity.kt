@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
@@ -31,15 +32,19 @@ class HomeActivity : ComponentActivity() {
             val navHostController = rememberNavController()
             Android14Theme {
                 SetupM3Scaffold(viewModel.currentScreen) { paddingValues ->
+                    BackHandler {
+                        navHostController.popBackStack()
+                        viewModel.updateDestination(viewModel.prevScreen)
+                    }
                     NavigationHost(
                         navHostController = navHostController,
                         paddingValues = paddingValues
                     ) { destination ->
                         when (destination) {
-                            Destination.Home,
                             Destination.CustomActionIntentChooser,
                             Destination.RegionalPrefs,
                             Destination.SelectedPhotoAccess -> {
+                                viewModel.updatePrevScreen(Destination.Home)
                                 viewModel.updateDestination(destination)
                                 navHostController.navigate(destination.title)
                             }
@@ -50,6 +55,8 @@ class HomeActivity : ComponentActivity() {
 
                             Destination.BackGesture -> BackGestureActivity.start(this)
                             Destination.ScreenshotDetection -> ScreenshotActivity.start(this)
+                            else -> {/* no-op */
+                            }
                         }
                     }
                 }

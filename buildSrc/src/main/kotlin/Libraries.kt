@@ -1,4 +1,6 @@
 object Libraries {
+    // Kotlin
+    const val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
 
     // Core
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"

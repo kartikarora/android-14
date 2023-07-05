@@ -13,7 +13,13 @@ class HomeViewModel(
 
     companion object {
         private const val KEY_CURRENT_DESTINATION = "_KEY_CURRENT_DESTINATION"
+        private const val KEY_PREV_DESTINATION = "_KEY_PREV_DESTINATION"
     }
+
+    var prevScreen by mutableStateOf<Destination>(
+        savedStateHandle[KEY_PREV_DESTINATION] ?: Destination.Home
+    )
+
 
     var currentScreen by mutableStateOf<Destination>(
         savedStateHandle[KEY_CURRENT_DESTINATION] ?: Destination.Home
@@ -22,5 +28,10 @@ class HomeViewModel(
     fun updateDestination(destination: Destination) {
         currentScreen = destination
         savedStateHandle[KEY_CURRENT_DESTINATION] = destination
+    }
+
+    fun updatePrevScreen(destination: Destination) {
+        prevScreen = destination
+        savedStateHandle[KEY_PREV_DESTINATION] = destination
     }
 }

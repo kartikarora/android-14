@@ -134,9 +134,9 @@ fun ToggleButton(
 }
 
 sealed class SelectionType {
-    object None : SelectionType()
-    object Single : SelectionType()
-    object Multiple : SelectionType()
+    data object None : SelectionType()
+    data object Single : SelectionType()
+    data object Multiple : SelectionType()
 }
 
 data class ToggleButtonOption(

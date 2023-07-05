@@ -9,22 +9,30 @@
         <item quantity="two">@string/screenshot_count_string_two</item>
         <item quantity="other">Okay you have been reported to the authorities</item>
     </plurals>
-    <string name="regional_pref_day_suffix">%1$sday</string>
-    <string name="regional_pref_calendar_type_title">Calendar type</string>
-    <string name="regional_pref_first_day_of_week_title">First day of week</string>
-    <string name="regional_pref_hour_cycle_title">Hour cycle</string>
-    <string name="regional_pref_temperature_unit_title">Temperature Unit</string>
+    <string name="regional_pref_day_suffix" translatable="false">%1$sday</string>
+    <string name="regional_pref_calendar_type_title" translatable="false">Calendar type</string>
+    <string name="regional_pref_first_day_of_week_title" translatable="false">First day of week</string>
+    <string name="regional_pref_hour_cycle_title" translatable="false">Hour cycle</string>
+    <string name="regional_pref_temperature_unit_title" translatable="false">Temperature Unit</string>
 
     <string name="word">Waiter/Waitress</string>
     <string name="sentence">The restaurant is hiring a new waiter/waitress for the busy season.</string>
-    <string name="back_gesture_title">Do the back gesture, come on. Don\'t be shy.</string>
-    <string name="share_an_image_button_title">Share an image</string>
-    <string name="custom_action_intent_query">Android 14</string>
-    <string name="intent_chooser_extra">Android 14 Demo Share</string>
-    <string name="intent_chooser_title">Share via</string>
-    <string name="image_mimetype">image/*</string>
-    <string name="grammar_api_word_title">Word</string>
-    <string name="grammar_api_sentence_title">Sentence</string>
-    <string name="media_picker_permission_button_title">Launch permission dialog</string>
-    <string name="media_picker_photo_picker_button_title">Launch photo picker</string>
+    <string name="back_gesture_title" translatable="false">Do the back gesture, come on. Don\'t be shy.</string>
+    <string name="custom_action_intent_query" translatable="false">Android 14</string>
+    <string name="intent_chooser_extra" translatable="false">Android 14 Demo Share</string>
+    <string name="intent_chooser_title" translatable="false">Share via</string>
+    <string name="image_mimetype" translatable="false">image/*</string>
+    <string name="grammar_api_word_title" translatable="false">Word</string>
+    <string name="grammar_api_sentence_title" translatable="false">Sentence</string>
+    <string name="media_picker_permission_button_title" translatable="false">Launch permission dialog</string>
+    <string name="media_picker_photo_picker_button_title" translatable="false">Launch photo picker</string>
+
+
+    <string name="core_theme_privacy_security" translatable="false">Privacy And Security</string>
+    <string name="core_theme_system_ui" translatable="false">System UI</string>
+    <string name="core_theme_personalisation" translatable="false">Personalisation</string>
+
+    <string name="sharesheet_button_title" translatable="false">Launch Sharesheet</string>
+    <string name="sharesheet_custom_action_label_one" translatable="false">Perform a Search</string>
+    <string name="sharesheet_custom_action_label_two" translatable="false">Open in Browser</string>
 </resources>

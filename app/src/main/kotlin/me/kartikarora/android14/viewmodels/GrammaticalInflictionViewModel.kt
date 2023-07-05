@@ -21,8 +21,9 @@ class GrammaticalInflectionViewModel(
 
     val languageOptions = listOf(
         Languages.English,
-        Languages.French,
-        Languages.Spanish
+        Languages.Vietnamese,
+        Languages.Spanish,
+        Languages.French
     )
 
     val genderOptions = listOf(
@@ -50,9 +51,10 @@ class GrammaticalInflectionViewModel(
 
     sealed class Languages(private val languageTag: String) : Serializable {
 
-        object English : Languages("en-AU")
-        object French : Languages("fr-FR")
-        object Spanish : Languages("es-ES")
+        data object English : Languages("en-AU")
+        data object French : Languages("fr-FR")
+        data object Spanish : Languages("es-ES")
+        data object Vietnamese : Languages("vi-VN")
 
         val name: String
             get() {
@@ -72,9 +74,9 @@ class GrammaticalInflectionViewModel(
     }
 
     sealed class Genders(val inflection: Int) : Serializable {
-        object Masculine : Genders(Configuration.GRAMMATICAL_GENDER_MASCULINE)
-        object Feminine : Genders(Configuration.GRAMMATICAL_GENDER_FEMININE)
-        object Neutral : Genders(Configuration.GRAMMATICAL_GENDER_NEUTRAL)
+        data object Masculine : Genders(Configuration.GRAMMATICAL_GENDER_MASCULINE)
+        data object Feminine : Genders(Configuration.GRAMMATICAL_GENDER_FEMININE)
+        data object Neutral : Genders(Configuration.GRAMMATICAL_GENDER_NEUTRAL)
 
         val item: String get() = this.javaClass.simpleName
         fun toToggleButtonOption(isCurrent: Boolean): ToggleButtonOption {

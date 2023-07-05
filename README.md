@@ -14,9 +14,9 @@ At the time of writing (15 April 2023) this app targets Android 14 Beta 1 and de
 ## Building and Running
 
 The project was developed using
-- Android Studio Giraffe Canary 11. 
-- AGP 8.1.0-alpha11
-- Kotlin 1.8.0
+- Android Studio Giraffe Canary 12. 
+- AGP 8.2.0-alpha12
+- Kotlin 1.9.0
 - Java 17 VM
 - Kotlin DSL
 - Jetpack Compose
@@ -24,7 +24,7 @@ The project was developed using
 To build the app, clone the repository and open it as project in Android Studio Giraffe. Once indexed and dependencies are resolved, use `./gradlw assemble` to build an apk.
 Spin up an emulator for Android UpsideDownCake Preview and install the app to check it out
 
-Alternatively, if you are feeling adventurous, [Android 14 Beta 1](https://developer.android.com/about/versions/14/get) is available for Pixel devices. You can install [the latest apk](https://github.com/kartikarora/android-14/releases/latest) on a physical device to check it out.
+Alternatively, if you are feeling adventurous, [Android 14 Beta 4](https://developer.android.com/about/versions/14/get) is available for Pixel devices. You can install [the latest apk](https://github.com/kartikarora/android-14/releases/latest) on a physical device to check it out.
 
 ## Contribution
 

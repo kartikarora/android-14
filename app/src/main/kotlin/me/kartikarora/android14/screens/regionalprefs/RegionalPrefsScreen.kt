@@ -35,17 +35,7 @@ fun RegionalPrefsScreen(
             )
     ) {
         item {
-            val calendarType = LocalePreferences.getCalendarType()
-            Text(
-                text = stringResource(R.string.regional_pref_calendar_type_title),
-                style = MaterialTheme.typography.titleLarge
-            )
-            Text(
-                text = calendarType.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() },
-                style = MaterialTheme.typography.bodyLarge
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-
+            // First day of the week
             val firstDayOfWeek = stringResource(
                 R.string.regional_pref_day_suffix,
                 LocalePreferences.getFirstDayOfWeek()
@@ -60,6 +50,20 @@ fun RegionalPrefsScreen(
             )
             Spacer(modifier = Modifier.height(16.dp))
 
+            //Temperature Unit
+            val tempUnit = LocalePreferences.getTemperatureUnit()
+                .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+            Text(
+                text = stringResource(R.string.regional_pref_temperature_unit_title),
+                style = MaterialTheme.typography.titleLarge
+            )
+            Text(
+                text = tempUnit,
+                style = MaterialTheme.typography.bodyLarge
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // Hours Cycle
             val hourCycle = LocalePreferences.getHourCycle()
                 .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
             Text(
@@ -72,14 +76,14 @@ fun RegionalPrefsScreen(
             )
             Spacer(modifier = Modifier.height(16.dp))
 
-            val tempUnit = LocalePreferences.getTemperatureUnit()
-                .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+            // Calendar Type
+            val calendarType = LocalePreferences.getCalendarType()
             Text(
-                text = stringResource(R.string.regional_pref_temperature_unit_title),
+                text = stringResource(R.string.regional_pref_calendar_type_title),
                 style = MaterialTheme.typography.titleLarge
             )
             Text(
-                text = tempUnit,
+                text = calendarType.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() },
                 style = MaterialTheme.typography.bodyLarge
             )
         }

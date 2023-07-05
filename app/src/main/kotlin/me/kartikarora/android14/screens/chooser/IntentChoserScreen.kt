@@ -4,6 +4,7 @@ import android.app.PendingIntent
 import android.app.SearchManager
 import android.content.Intent
 import android.graphics.drawable.Icon
+import android.net.Uri
 import android.service.chooser.ChooserAction
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -49,9 +50,9 @@ fun IntentChooserScreen(
                         .putExtra(Intent.EXTRA_TEXT, stringResource(R.string.intent_chooser_extra)),
                     stringResource(R.string.intent_chooser_title)
                 ).apply {
-                    val customAction = ChooserAction.Builder(
-                        Icon.createWithResource(this@with, R.drawable.baseline_auto_awesome),
-                        stringResource(id = R.string.app_name),
+                    val customActionOne = ChooserAction.Builder(
+                        Icon.createWithResource(this@with, R.drawable.baseline_search),
+                        stringResource(id = R.string.sharesheet_custom_action_label_one),
                         PendingIntent.getActivity(
                             this@with,
                             1234,
@@ -64,7 +65,20 @@ fun IntentChooserScreen(
                             PendingIntent.FLAG_IMMUTABLE
                         )
                     ).build()
-                    this.putExtra(Intent.EXTRA_CHOOSER_CUSTOM_ACTIONS, arrayOf(customAction))
+                    val customActionTwo = ChooserAction.Builder(
+                        Icon.createWithResource(this@with, R.drawable.baseline_open_in_browser),
+                        stringResource(id = R.string.sharesheet_custom_action_label_two),
+                        PendingIntent.getActivity(
+                            this@with,
+                            5678,
+                            Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com")),
+                            PendingIntent.FLAG_IMMUTABLE
+                        )
+                    ).build()
+                    this.putExtra(
+                        Intent.EXTRA_CHOOSER_CUSTOM_ACTIONS,
+                        arrayOf(customActionOne, customActionTwo)
+                    )
                 }
                 startActivity(chooserIntent)
                 openChooser = false
@@ -75,7 +89,7 @@ fun IntentChooserScreen(
                 openChooser = true
             }
         ) {
-            Text(text = stringResource(R.string.share_an_image_button_title))
+            Text(text = stringResource(R.string.sharesheet_button_title))
         }
     }
 }
