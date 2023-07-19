@@ -16,8 +16,8 @@ object Libraries {
         "androidx.compose.runtime:runtime-livedata"
     const val composeUi = "androidx.compose.ui:ui"
     const val composeMaterial3 = "androidx.compose.material3:material3"
-    const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview"
     const val composeUiTooling = "androidx.compose.ui:ui-tooling"
+    const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.composeUiTooling}"
     const val navigationCompose =
         "androidx.navigation:navigation-compose:${Versions.navigationCompose}"
 

@@ -15,7 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import me.kartikarora.android14.R
@@ -68,21 +68,10 @@ fun ScreenshotScreen(
     }
 }
 
-@Preview
+@PreviewLightDark
 @Composable
-fun ScreenshotLightPreview() {
+fun ScreenshotPreview() {
     Android14Theme {
-        SetupM3Scaffold(Destination.ScreenshotDetection) { paddingValues ->
-            ScreenshotScreen(paddingValues)
-        }
-    }
-}
-
-
-@Preview
-@Composable
-fun ScreenshotDarkPreview() {
-    Android14Theme(useDarkTheme = true) {
         SetupM3Scaffold(Destination.ScreenshotDetection) { paddingValues ->
             ScreenshotScreen(paddingValues)
         }

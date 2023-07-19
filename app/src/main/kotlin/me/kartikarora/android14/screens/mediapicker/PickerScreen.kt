@@ -25,7 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import me.kartikarora.android14.R
@@ -114,21 +114,10 @@ fun PickerScreen(
     }
 }
 
-@Preview
+@PreviewLightDark
 @Composable
-fun BackLightPreview() {
+fun PickerPreview() {
     Android14Theme {
-        SetupM3Scaffold(Destination.SelectedPhotoAccess) { paddingValues ->
-            PickerScreen(paddingValues)
-        }
-    }
-}
-
-
-@Preview
-@Composable
-fun BackDarkPreview() {
-    Android14Theme(useDarkTheme = true) {
         SetupM3Scaffold(Destination.SelectedPhotoAccess) { paddingValues ->
             PickerScreen(paddingValues)
         }

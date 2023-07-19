@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.core.text.util.LocalePreferences
 import me.kartikarora.android14.R
@@ -90,21 +90,10 @@ fun RegionalPrefsScreen(
     }
 }
 
-@Preview
+@PreviewLightDark
 @Composable
-fun BackLightPreview() {
+fun RegionalPrefsPreview() {
     Android14Theme {
-        SetupM3Scaffold(Destination.RegionalPrefs) { paddingValues ->
-            RegionalPrefsScreen(paddingValues)
-        }
-    }
-}
-
-
-@Preview
-@Composable
-fun BackDarkPreview() {
-    Android14Theme(useDarkTheme = true) {
         SetupM3Scaffold(Destination.RegionalPrefs) { paddingValues ->
             RegionalPrefsScreen(paddingValues)
         }
