@@ -9,6 +9,6 @@ object Versions {
     const val junit = "4.13.2"
     const val lifecycle = "2.6.1"
 
-    const val gradlePlugin = "8.2.0-beta05"
+    const val gradlePlugin = "8.3.0-alpha05"
     const val kotlin = "1.9.0"
 }
