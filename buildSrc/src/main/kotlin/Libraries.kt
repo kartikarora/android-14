@@ -7,7 +7,6 @@ object Libraries {
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
     const val junit = "junit:junit:${Versions.junit}"
     const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
-
     const val composeActivity = "androidx.activity:activity-compose:${Versions.activity}"
 
     // Compose
