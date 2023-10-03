@@ -1,8 +1,8 @@
 import java.util.Properties
 
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.gradlePlugin)
+    alias(libs.plugins.kotlin)
 
 }
 
@@ -17,22 +17,22 @@ java {
 }
 
 android {
-    namespace = AndroidConfig.Namespace
-    compileSdk = AndroidConfig.CompileSdk
-    buildToolsVersion = AndroidConfig.BuildTools
+    namespace = libs.versions.namespace.get()
+    compileSdk = libs.versions.compileSdk.get().toInt()
+    buildToolsVersion = libs.versions.buildTools.get()
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = AndroidConfig.KotlinCompilerExtensionVersion
+        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerExtensionVersion.get()
     }
     defaultConfig {
         val versionProperties = readProperties(file("../version.properties"))
-        minSdk = AndroidConfig.MinSdk
-        targetSdk = AndroidConfig.TargetSdk
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode =
             versionProperties.getProperty("VERSION_CODE").toInt()
-        versionName = AndroidConfig.VersionName
+        versionName = libs.versions.versionName.get()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -69,20 +69,15 @@ android {
 }
 
 dependencies {
-    implementation(Libraries.kotlinStdlib)
-    implementation(Libraries.coreKtx)
-    implementation(Libraries.appcompat)
-    implementation(Libraries.lifecycle)
-    implementation(Libraries.coil)
-    implementation(Libraries.navigationCompose)
-    implementation(platform(Libraries.composeBom))
-    implementation(Libraries.composeActivity)
-    implementation(Libraries.composeRuntimeLiveData)
-    implementation(Libraries.composeUi)
-    implementation(Libraries.composeMaterial3)
-    implementation(Libraries.composeUiToolingPreview)
-    debugImplementation(Libraries.composeUiTooling)
-    testImplementation(Libraries.junit)
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.androidx.coreKtx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.lifecycle)
+    implementation(libs.coil)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.bundles.androidx.compose)
+    debugImplementation(libs.androidx.compose.uiTooling)
+    testImplementation(libs.junit)
 }
 
 fun readProperties(propertiesFile: File) = Properties().apply {
@@ -90,5 +85,5 @@ fun readProperties(propertiesFile: File) = Properties().apply {
 }
 
 task("getVersionName") {
-    println(AndroidConfig.VersionName)
+    println(libs.versions.versionName.get())
 }

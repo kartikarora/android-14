@@ -1,0 +1,44 @@
+[versions]
+coil = "2.4.0"
+navigationCompose = "2.7.3"
+activity = "1.8.0-rc01"
+coreKtx = "1.12.0"
+appcompat = "1.7.0-alpha03"
+composeBOM = "2023.09.02"
+composeUiTooling = "1.6.0-alpha06"
+junit = "4.13.2"
+lifecycle = "2.7.0-alpha02"
+gradleVersionsPlugin = "0.48.0"
+gradlePlugin = "8.3.0-alpha17"
+kotlin = "1.9.20-Beta2"
+compileSdk = "34"
+minSdk = "34"
+targetSdk = "34"
+versionName = "0.2.2"
+namespace = "me.kartikarora.android14"
+kotlinCompilerExtensionVersion = "1.5.4-dev-k1.9.20-Beta2-ac5f960bdaf"
+buildTools = "34.0.0"
+
+[libraries]
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
+androidx-coreKtx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "activity" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBOM" }
+androidx-compose-runtimeLiveData = { group = "androidx.compose.runtime", name = "runtime-livedata" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-uiTooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-uiToolingPreview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "composeUiTooling" }
+androidx-compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+
+[bundles]
+androidx-compose = ["androidx-compose-activity", "androidx-compose-runtimeLiveData", "androidx-compose-ui", "androidx-compose-material3", "androidx-compose-uiTooling", "androidx-compose-uiToolingPreview", "androidx-compose-navigation"]
+
+[plugins]
+android-gradlePlugin = { id = "com.android.application", version.ref = "gradlePlugin" }
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+gradleVersionsPlugin = { id = "com.github.ben-manes.versions", version.ref = "gradleVersionsPlugin" }

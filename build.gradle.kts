@@ -2,9 +2,9 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    id("com.android.application") version Versions.gradlePlugin apply false
-    id("org.jetbrains.kotlin.android") version Versions.kotlin apply false
-    id("com.github.ben-manes.versions") version Versions.gradleVersionsPlugin
+    alias(libs.plugins.android.gradlePlugin) apply false
+    alias(libs.plugins.kotlin) apply false
+    alias(libs.plugins.gradleVersionsPlugin)
 }
 
 tasks.named<DependencyUpdatesTask>("dependencyUpdates").configure {
