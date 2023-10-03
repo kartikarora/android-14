@@ -1,5 +1,5 @@
 object Versions {
-    const val coil = "2.4.0"
+    const val coil = "2.3.0"
     const val navigationCompose = "2.7.3"
     const val activity = "1.8.0-rc01"
     const val coreKtx = "1.12.0"
