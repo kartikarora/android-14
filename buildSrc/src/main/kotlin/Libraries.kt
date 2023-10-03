@@ -23,4 +23,7 @@ object Libraries {
 
     // coil
     const val coil = "io.coil-kt:coil-compose:${Versions.coil}"
+
+    // GVP
+    const val gradleVersionsPlugin = "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleVersionsPlugin}"
 }
