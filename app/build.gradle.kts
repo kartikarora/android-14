@@ -17,22 +17,22 @@ java {
 }
 
 android {
-    namespace = AndroidConfig.Namespace
-    compileSdk = AndroidConfig.CompileSdk
-    buildToolsVersion = AndroidConfig.BuildTools
+    namespace = "me.kartikarora.android14"
+    compileSdk = 34
+    buildToolsVersion = "34.0.0"
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = AndroidConfig.KotlinCompilerExtensionVersion
+        kotlinCompilerExtensionVersion = "1.5.4-dev-k1.9.20-Beta2-ac5f960bdaf"
     }
     defaultConfig {
         val versionProperties = readProperties(file("../version.properties"))
-        minSdk = AndroidConfig.MinSdk
-        targetSdk = AndroidConfig.TargetSdk
+        minSdk = 34
+        targetSdk = 34
         versionCode =
             versionProperties.getProperty("VERSION_CODE").toInt()
-        versionName = AndroidConfig.VersionName
+        versionName = "0.2.2"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -69,20 +69,20 @@ android {
 }
 
 dependencies {
-    implementation(Libraries.kotlinStdlib)
-    implementation(Libraries.coreKtx)
-    implementation(Libraries.appcompat)
-    implementation(Libraries.lifecycle)
-    implementation(Libraries.coil)
-    implementation(Libraries.navigationCompose)
-    implementation(platform(Libraries.composeBom))
-    implementation(Libraries.composeActivity)
-    implementation(Libraries.composeRuntimeLiveData)
-    implementation(Libraries.composeUi)
-    implementation(Libraries.composeMaterial3)
-    implementation(Libraries.composeUiToolingPreview)
-    debugImplementation(Libraries.composeUiTooling)
-    testImplementation(Libraries.junit)
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.20-Beta2")
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.appcompat:appcompat:1.7.0-alpha03")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0-alpha02")
+    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation("androidx.navigation:navigation-compose:2.7.3")
+    implementation(platform("androidx.compose:compose-bom:2023.09.02"))
+    implementation("androidx.activity:activity-compose:1.8.0-rc01")
+    implementation("androidx.compose.runtime:runtime-livedata")
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.6.0-alpha06")
+    debugImplementation("androidx.compose.ui:ui-tooling")
+    testImplementation("junit:junit:4.13.2")
 }
 
 fun readProperties(propertiesFile: File) = Properties().apply {
@@ -90,5 +90,5 @@ fun readProperties(propertiesFile: File) = Properties().apply {
 }
 
 task("getVersionName") {
-    println(AndroidConfig.VersionName)
+    println("0.2.2")
 }
