@@ -28,9 +28,8 @@ android {
     }
     defaultConfig {
         val versionProperties = readProperties(file("../version.properties"))
-        applicationId = AndroidConfig.Namespace
-        minSdkPreview = AndroidConfig.MinSdk
-        targetSdkPreview = AndroidConfig.TargetSdk
+        minSdk = AndroidConfig.MinSdk
+        targetSdk = AndroidConfig.TargetSdk
         versionCode =
             versionProperties.getProperty("VERSION_CODE").toInt()
         versionName = AndroidConfig.VersionName
