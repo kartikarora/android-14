@@ -10,6 +10,6 @@ object Versions {
     const val lifecycle = "2.7.0-alpha02"
     const val gradleVersionsPlugin = "0.48.0"
 
-    const val gradlePlugin = "8.3.0-alpha07"
+    const val gradlePlugin = "8.3.0-alpha14"
     const val kotlin = "1.9.20-Beta2"
 }
