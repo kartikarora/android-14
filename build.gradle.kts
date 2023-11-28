@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.android.gradlePlugin) apply false
     alias(libs.plugins.kotlin) apply false
     alias(libs.plugins.gradleVersionsPlugin)
+    alias(libs.plugins.androidLibrary) apply false
 }
 
 tasks.named<DependencyUpdatesTask>("dependencyUpdates").configure {

@@ -18,3 +18,5 @@ dependencyResolutionManagement {
 rootProject.name = "Android 14"
 
 include(":app")
+include(":libraryone")
+include(":librarytwo")
