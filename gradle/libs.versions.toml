@@ -18,6 +18,8 @@ versionName = "0.2.2"
 namespace = "me.kartikarora.android14"
 libraryOneNamespace = "me.kartikarora.libraryone"
 libraryTwoNamespace = "me.kartikarora.librarytwo"
+libraryPluginGroup = "me.kartikarora.library.plugin"
+conventionAndroidLibraryId = "convention.android.library"
 kotlinCompilerExtensionVersion = "1.5.4-dev-k1.9.20-Beta2-ac5f960bdaf"
 buildTools = "34.0.0"
 material = "1.10.0"
@@ -39,6 +41,10 @@ androidx-compose-navigation = { group = "androidx.navigation", name = "navigatio
 coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
+# build-logic
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "gradlePlugin" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+
 [bundles]
 androidx-compose = ["androidx-compose-activity", "androidx-compose-runtimeLiveData", "androidx-compose-ui", "androidx-compose-material3", "androidx-compose-uiTooling", "androidx-compose-uiToolingPreview", "androidx-compose-navigation"]
 
@@ -47,3 +53,6 @@ android-gradlePlugin = { id = "com.android.application", version.ref = "gradlePl
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 gradleVersionsPlugin = { id = "com.github.ben-manes.versions", version.ref = "gradleVersionsPlugin" }
 androidLibrary = { id = "com.android.library", version.ref = "gradlePlugin" }
+
+# build-logic
+convention-androidLibrary = { id = "convention.android.library", version = "unspecified" }
