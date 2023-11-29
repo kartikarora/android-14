@@ -39,6 +39,11 @@ androidx-compose-navigation = { group = "androidx.navigation", name = "navigatio
 coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
+# buildSrc
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "gradlePlugin" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+gradle-api = { group = "com.android.tools.build", name = "gradle-api", version.ref = "gradlePlugin" }
+
 [bundles]
 androidx-compose = ["androidx-compose-activity", "androidx-compose-runtimeLiveData", "androidx-compose-ui", "androidx-compose-material3", "androidx-compose-uiTooling", "androidx-compose-uiToolingPreview", "androidx-compose-navigation"]
 
@@ -47,3 +52,6 @@ android-gradlePlugin = { id = "com.android.application", version.ref = "gradlePl
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 gradleVersionsPlugin = { id = "com.github.ben-manes.versions", version.ref = "gradleVersionsPlugin" }
 androidLibrary = { id = "com.android.library", version.ref = "gradlePlugin" }
+
+# buildSrc
+precompiled-androidLibrary = { id = "precompiled-android-library", version = "unspecified" }

@@ -1,8 +1,8 @@
 import java.util.Properties
 
 plugins {
-    alias(libs.plugins.android.gradlePlugin)
-    alias(libs.plugins.kotlin)
+    id(libs.plugins.android.gradlePlugin.get().pluginId)
+    id(libs.plugins.kotlin.get().pluginId)
 
 }
 
